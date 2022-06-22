@@ -1,26 +1,41 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <tool-bar></tool-bar>
+  <router-view></router-view>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ToolBar from '@/components/ToolBar.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    ToolBar,
+  },
+  methods : {
+    
+  },
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  #itemsLine {
+    line-height: 50px;
+    border-bottom: 1px solid #d9d9d9;
+
+     a {
+      margin-right: 10px;
+      color: #333;
+    }
+
+    small {
+      color: #6c6c6c;
+    }
+  }
 </style>
