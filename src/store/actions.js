@@ -1,4 +1,4 @@
-import { fectchNewsList, fetchAskList, fetchJobsList } from '../api/index.js'
+import { fectchNewsList, fetchAskList, fetchJobsList, fetchUserInfo, fetchAskDetail } from '../api/api.js'
 
 export default {
     FETCH_NEWS(context) {
@@ -23,5 +23,32 @@ export default {
             context.commit('SET_JOBS', response.data);
         })
         .catch(error => console.log(error))
+    },
+    //디스럭처리
+    // FETCH_USER({ commit }, username) {
+    //     fetchUserInfo(username)
+    //     .then( ({data})=> {
+    //        commit('SET_USER', data)
+    //     })
+    //     .catch(error => {
+    //         console.log(error)
+    //     })
+    // }
+    FETCH_USER(context, username) {
+        fetchUserInfo(username)
+        .then( res => {
+            context.commit('SET_USER', res.data);
+            
+        })
+        .catch(error => console.log(error))
+    },
+    FETCH_ITEM({commit}, askId) {
+        fetchAskDetail(askId)
+        .then(({data}) => {
+            commit('SET_ASKDETAIL', data)
+        })
+        .catch( error => {
+            console.log(error)
+        })
     }
   }

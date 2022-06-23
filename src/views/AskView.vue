@@ -3,9 +3,9 @@
     <div v-for="askList in this.$store.state.ask" :key="askList" id="itemsLine">
       <!-- <div>{{askList.points}}</div> -->
       <div>
-        <a :href="askList.url">
+        <router-link :to="`/item/${askList.id}`">
         {{askList.title}}
-        </a>
+        </router-link>
         <small>
           {{askList.time_ago}} by {{askList.user}}
         </small>

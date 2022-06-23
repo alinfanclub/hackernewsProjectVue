@@ -9,7 +9,9 @@ const store = createStore({
     return {
       news: [],
       ask: [],
-      jobs: []
+      jobs: [],
+      user : {},
+      item : {}
     }
   },
   getters,
