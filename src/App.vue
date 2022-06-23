@@ -28,6 +28,7 @@ export default {
   #itemsLine {
     line-height: 50px;
     border-bottom: 1px solid #d9d9d9;
+    padding: 0 10px;
 
      a {
       margin-right: 10px;

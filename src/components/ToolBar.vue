@@ -26,12 +26,12 @@ export default {
         padding: 8px;
         display: flex;
 
+
         > div {
             background-color: white;
             border-radius: 50%;
             position: relative;
             width: 50px;
-            height: 50px;
         }
 
         img {
