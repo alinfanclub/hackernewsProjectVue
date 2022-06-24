@@ -9,8 +9,7 @@
             </router-link>
             {{itemData.time_ago}}
         </small>
-        <div v-html="itemData.content">
-        </div>
+        <div v-html="itemData.content"></div>
    </section>
     <section id="comments">
         <p>
@@ -24,7 +23,7 @@
                 <small> comment : {{comment.time_ago}}</small>
             </p>
             <div v-html="comment.content" id="commentText"></div>
-    </div>
+        </div>
     </section>
   </div>
 </template>
@@ -46,9 +45,6 @@ export default {
 
 <style scoped lang="scss">
 div {
-    #routerLink {
-        color: rgb(115, 160, 25);
-    }
     a {
         color: #333
     }

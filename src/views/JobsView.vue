@@ -1,34 +1,21 @@
 <template>
   <div>
-      <div v-for="joblist in this.$store.state.jobs" :key="joblist" id="itemsLine">
-        <a v-bind:href="joblist.url" target="_blank">
-          {{joblist.title}}
-        </a>
-        <small>{{joblist.time_ago}}, {{joblist.domain}}</small>
-      </div>
-      
+      <list-view></list-view>
   </div>
 </template>
 
 <script>
-// import { response } from 'express';
-// import { fetchJobsList } from '../api/index'
+import ListView from '../components/ListView.vue'
 
 export default {
 name: 'JobsView',
-data() {
-  return {
-    // jobs : [],
-  }
+components : {
+  ListView,
 },
   created() {
     this.$store.dispatch('FETCH_JOBS')
-    .then( () =>
-        console.log('success JOB')
-      )
-      .catch( () =>
-        console.log('error')
-      )
+      .then(() => console.log('success JOBS'))
+      .catch(() => console.log('fail'))
   }
 }
 

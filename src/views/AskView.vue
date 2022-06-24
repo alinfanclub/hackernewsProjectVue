@@ -1,55 +1,25 @@
 <template>
   <div id="container">
-    <div v-for="askList in this.$store.state.ask" :key="askList" id="itemsLine">
-      <!-- <div>{{askList.points}}</div> -->
-      <div>
-        <router-link :to="`/item/${askList.id}`">
-        {{askList.title}}
-        </router-link>
-        <small>
-          {{askList.time_ago}} by {{askList.user}}
-        </small>
-      </div>
-    </div>
+    <list-view></list-view>
   </div>
 </template>
 
 <script>
+import ListView from '../components/ListView.vue'
 
 export default {
     name: 'AskView',
-    data() {
-      return {
-        // ask : [],
-      }
+    components : {
+      ListView,
     },
-    created () {
-      this.$store.dispatch('FETCH_ASK')
-      .then( () =>
-        console.log('success Ask')
-      )
-      .catch( () =>
-        console.log('error')
-      )
-   
-    }
+  created() {
+    this.$store.dispatch('FETCH_ASK')
+      .then(() => console.log('success ASK'))
+      .catch(() => console.log('fail'))
+  }
 }
 </script>
 
 <style lang="scss">
-  // #container {
-  //   > div  {
-  //     display: flex;
 
-  //     > div {
-  //       &:nth-child(1) {
-  //         width: 50px;
-  //         margin-right: 10px;
-  //         text-align: center;
-  //         background-color: #42b883;
-  //         color: white;
-  //       }
-  //     }
-  //   }
-  // }
 </style>
