@@ -1,5 +1,5 @@
 <template>
-  <div class="lds-facebook" v-if="loading">
+  <div class="lds-facebook" v-if="this.$store.state.loading">
     <div>
     </div>
     <div>
@@ -13,10 +13,10 @@
 export default {
     name: 'SpinnerTool',
   props: {
-    loading: {
-      type: Boolean,
-      required: true,
-    },
+    // loading: {
+    //   type: Boolean,
+    //   required: true,
+    // },
   },
 }
 </script>

@@ -37,8 +37,12 @@ export default {
         ...mapGetters(['itemData']),
     },
     created() {
+        this.$store.state.loading = true
+        console.log(this.$store.state.loading);
         const askId = this.$route.params.id
         this.$store.dispatch('FETCH_ITEM', askId)
+        this.$store.state.loading = false
+        console.log(this.$store.state.loading);
     },
 }
 </script >
