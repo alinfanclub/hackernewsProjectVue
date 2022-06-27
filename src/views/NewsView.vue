@@ -6,6 +6,7 @@
 
 <script>
 import ListItem from '../components/ListItem'
+import ListMixIn from '../mixins/ListMixin'
 export default {
   name : 'NewsView',
   data() {
@@ -23,6 +24,9 @@ export default {
   components : {
     ListItem,
   },
+  mixins : [
+    ListMixIn
+  ],
   // created() {
   //    this.$store.state.loading = true
   // this.$store.dispatch('FETCH_NEWS')
@@ -32,6 +36,10 @@ export default {
    
   // }
 }
+
+
+
+
 // //#1.
 // // import { mapState } from 'vuex'
 

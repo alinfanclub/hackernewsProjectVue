@@ -5,13 +5,17 @@
 </template>
 
 <script>
-// import ListItem from '../components/ListItem.vue'
+import ListItem from '../components/ListItem.vue'
+import ListMixin from '@/mixins/ListMixin'
 
 export default {
 name: 'JobsView',
 components : {
   ListItem,
 },
+mixins : [
+  ListMixin
+]
 
 }
 

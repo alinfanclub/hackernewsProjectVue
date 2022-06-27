@@ -6,12 +6,16 @@
 
 <script>
 import ListItem from '../components/ListItem'
+import ListMixin from '@/mixins/ListMixin'
 
 export default {
     name: 'AskView',
     components : {
       ListItem,
     },
+    mixins : [
+  ListMixin
+  ],
   // created() {
   //   this.$store.state.loading = true
   //   this.$store.dispatch('FETCH_ASK')

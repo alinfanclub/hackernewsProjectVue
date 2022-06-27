@@ -1,10 +1,10 @@
 import { createWebHistory, createRouter } from "vue-router";
-// import NewsView from '@/views/NewsView.vue';
-// import JobsView from '@/views/JobsView.vue';
-// import AskView from '@/views/AskView.vue';
+import NewsView from '@/views/NewsView.vue';
+import JobsView from '@/views/JobsView.vue';
+import AskView from '@/views/AskView.vue';
 import UserView from '@/views/UserView.vue';
 import ItemView from '@/views/ItemView.vue';
-import createListView from "@/views/createList";
+// import createListView from "@/views/createList";
 const routes = [
   {
     path: '/',
@@ -13,17 +13,20 @@ const routes = [
   {
     path: '/news',
     name: 'news',
-    component: createListView('NewsView')
+    // component: createListView('NewsView')
+    component : NewsView
   },
   {
     path: '/jobs',
     name: 'jobs',
-    component : createListView('JobsView')
+    component : JobsView
+    // component : createListView('JobsView')
   },
   {
     path: '/ask',
     name: 'ask',
-    component : createListView('AskView')
+    // component : createListView('AskView')
+    component : AskView
   },
   {
     path: '/user/:id',
