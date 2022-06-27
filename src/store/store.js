@@ -11,7 +11,10 @@ const store = createStore({
       ask: [],
       jobs: [],
       user : {},
-      item : {}
+      item : {},
+      // loadingStatus: false,
+      loading : true,
+      list : []
     }
   },
   getters,

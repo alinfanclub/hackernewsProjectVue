@@ -4,11 +4,11 @@
  <transition name="page">
    <router-view></router-view>
  </transition>
-   <spinner-tool :loading="loadingStatus = true"></spinner-tool>
+   <spinner-tool></spinner-tool>
 </div>
 
 </template>
-
+g
 <script>
 import ToolBar from '@/components/ToolBar.vue'
 import SpinnerTool from './components/Spinner.vue'
@@ -19,16 +19,16 @@ export default {
     SpinnerTool,
   },
   methods : {
-    startSpinner() {
-      this.loadingStatus = true
-    },
-    endSpinner() {
-      this.loadingStatus = false
-    }
+    // startSpinner() {
+    //   this.loadingStatus = true
+    // },
+    // endSpinner() {
+    //   this.loadingStatus = false
+    // }
   },
   data() {
     return {
-      loadingStatus: false,
+      // loadingStatus: false,
     }
   },
   created() {

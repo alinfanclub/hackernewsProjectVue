@@ -1,22 +1,18 @@
 <template>
   <div>
-      <list-view></list-view>
+      <list-item></list-item>
   </div>
 </template>
 
 <script>
-import ListView from '../components/ListView.vue'
+// import ListItem from '../components/ListItem.vue'
 
 export default {
 name: 'JobsView',
 components : {
-  ListView,
+  ListItem,
 },
-  created() {
-    this.$store.dispatch('FETCH_JOBS')
-      .then(() => console.log('success JOBS'))
-      .catch(() => console.log('fail'))
-  }
+
 }
 
 </script>

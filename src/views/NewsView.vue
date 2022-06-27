@@ -5,24 +5,32 @@
 </template>
 
 <script>
-import ListItem from '../components/ListView.vue'
-// import SpinnerVue from '@/components/Spinner.vue'
+import ListItem from '../components/ListItem'
 export default {
   name : 'NewsView',
   data() {
     return {
-      //  loadingStatus: false,
     }
   },
+  methods : {
+        startSpinner() {
+        this.loadingStatus = true
+      },
+      endSpinner() {
+        this.loadingStatus = false
+      }
+  },  
   components : {
     ListItem,
   },
-  created() {
-  this.$store.dispatch('FETCH_NEWS')
-    .then(() => console.log('success NEWS'))
-    .catch(() => console.log('fail'))
+  // created() {
+  //    this.$store.state.loading = true
+  // this.$store.dispatch('FETCH_NEWS')
+  //   .then(() => console.log('success NEWS'))
+  //   .catch(() => console.log('fail'))
+  //   this.$store.state.loading = false
    
-  }
+  // }
 }
 // //#1.
 // // import { mapState } from 'vuex'

@@ -12,10 +12,15 @@ export default {
     
     name : 'userView',
     created() {
+       this.$store.state.loading = true
         const userName = this.$route.params.id;
         this.$store.dispatch('FETCH_USER', userName)
-        .then(() => console.log('Success load UserData'))
-        .catch(() => console.log('fail'))
+        .then(() => {
+          console.log('Success load UserData');
+          this.$store.state.loading = false;
+          }
+        )
+        .catch((error) => console.log(error))
     },
     components : {
       UserProflie

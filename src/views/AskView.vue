@@ -1,22 +1,26 @@
 <template>
   <div id="container">
-    <list-view></list-view>
+    <list-item></list-item>
   </div>
 </template>
 
 <script>
-import ListView from '../components/ListView.vue'
+import ListItem from '../components/ListItem'
 
 export default {
     name: 'AskView',
     components : {
-      ListView,
+      ListItem,
     },
-  created() {
-    this.$store.dispatch('FETCH_ASK')
-      .then(() => console.log('success ASK'))
-      .catch(() => console.log('fail'))
-  }
+  // created() {
+  //   this.$store.state.loading = true
+  //   this.$store.dispatch('FETCH_ASK')
+  //     .then(() => {
+  //       console.log('success ASK');
+  //       this.$store.state.loading = false
+  //     })
+  //     .catch((error) => console.log(error))
+  // }
 }
 </script>
 
